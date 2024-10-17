@@ -250,6 +250,7 @@ _The `citi_df` dataset contains data on rides in Jan 2020, July 2020, Jan 2024, 
 #### Produce a reader-friendly table showing the total number of rides in each combination of year and month separating casual riders and Citi Bike members. Comment on these results.
 ```{r}
 citi_df |> 
+  drop_na() |> 
   janitor::tabyl(member_casual, month, year) |> 
   print()
 ```
